@@ -415,6 +415,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
+    sentry-rails (6.1.0)
+      railties (>= 5.2.0)
+      sentry-ruby (~> 6.1.0)
+    sentry-ruby (6.1.0)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     shellany (0.0.1)
     shoulda-matchers (7.0.1)
       activesupport (>= 7.1)
@@ -534,6 +540,8 @@ DEPENDENCIES
   rubocop-rails-omakase
   rubocop-rspec
   selenium-webdriver (~> 4.38)
+  sentry-rails
+  sentry-ruby
   shoulda-matchers (~> 7.0)
   sidekiq
   solid_cable
