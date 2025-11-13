@@ -67,6 +67,9 @@ group :development, :test do
 
   # RSpec testing framework [https://github.com/rspec/rspec-rails]
   gem "rspec-rails", "~> 8.0"
+
+  # Run tests in parallel [https://github.com/grosser/parallel_tests]
+  gem "parallel_tests"
 end
 
 group :development do
