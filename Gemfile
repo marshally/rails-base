@@ -84,4 +84,10 @@ group :test do
 
   # Fake data generation [https://github.com/faker-ruby/faker]
   gem "faker", "~> 3.0"
+
+  # Simple one-liner tests for common Rails functionality [https://github.com/thoughtbot/shoulda-matchers]
+  gem "shoulda-matchers", "~> 7.0"
+
+  # Database cleanup strategies for tests [https://github.com/DatabaseCleaner/database_cleaner]
+  gem "database_cleaner-active_record", "~> 2.2"
 end
