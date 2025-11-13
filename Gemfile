@@ -78,4 +78,10 @@ group :test do
   # System testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara", "~> 3.0"
   gem "selenium-webdriver", "~> 4.38"
+
+  # Test factories [https://github.com/thoughtbot/factory_bot_rails]
+  gem "factory_bot_rails", "~> 6.4"
+
+  # Fake data generation [https://github.com/faker-ruby/faker]
+  gem "faker", "~> 3.0"
 end
