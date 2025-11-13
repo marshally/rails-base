@@ -30,6 +30,14 @@
   </head>
 
   <body>
+    <%# Flash messages for user notifications %>
+    <% if notice %>
+      <p class="notice bg-info-50 text-info-600 px-4 py-3 rounded-lg mb-4"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert bg-error-50 text-error-600 px-4 py-3 rounded-lg mb-4"><%= alert %></p>
+    <% end %>
+
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
