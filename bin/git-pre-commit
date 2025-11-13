@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Pre-commit hook to ensure all specs pass and RuboCop is successful
+# Install: ln -s ../../bin/git-pre-commit .git/hooks/pre-commit
+
+set -e
+
+echo "🔍 Running pre-commit checks..."
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+print_status() {
+    echo -e "${GREEN}✓${NC} $1"
+}
+
+print_error() {
+    echo -e "${RED}✗${NC} $1"
+}
+
+# Check if bundle is available
+if ! command -v bundle &> /dev/null; then
+    print_error "Bundler not found. Please install bundler first."
+    exit 1
+fi
+
+# Run RuboCop (faster than tests)
+echo "🔍 Running RuboCop..."
+if bin/rubocop; then
+    print_status "RuboCop passed"
+else
+    print_error "RuboCop found violations. Please fix them before committing."
+    echo "To auto-fix: bin/rubocop -A"
+    exit 1
+fi
+
+# Run RSpec tests
+echo "🧪 Running RSpec tests..."
+if bin/rspec; then
+    print_status "All tests passed"
+else
+    print_error "Tests failed. Please fix failing tests before committing."
+    exit 1
+fi
+
+print_status "All pre-commit checks passed! 🎉"
+exit 0

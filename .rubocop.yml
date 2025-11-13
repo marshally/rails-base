@@ -1,0 +1,25 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+require:
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  SuggestExtensions: false
+
+# Overwrite or add rules to create your own house style
+Style/Documentation:
+  Enabled: false
+
+# Allow longer methods in migrations
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**/*'
+
+# Allow longer blocks in specs and tasks
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'lib/tasks/**/*'

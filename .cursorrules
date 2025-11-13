@@ -1,0 +1,42 @@
+# Cursor IDE Rules for Rails Base Template
+
+## Project Context
+- Rails 8.1.1 with Ruby 3.2.2
+- PostgreSQL database
+- Hotwire (Turbo + Stimulus) frontend
+- Tailwind CSS for styling
+- RSpec for testing
+- Devise + Pundit for auth
+
+## Code Style
+- Follow Rails conventions
+- Use Rails Omakase style (RuboCop enforced)
+- Write tests for all new features
+- Keep controllers thin, models focused
+- Use descriptive names for variables and methods
+
+## File Naming
+- snake_case for Ruby files
+- kebab-case for JavaScript files
+- Models: singular (user.rb)
+- Controllers: plural (users_controller.rb)
+- Tests: match source file with _spec suffix
+
+## Testing
+- Write RSpec tests for all features
+- Use Factory Bot for test data
+- Test behavior, not implementation
+- Aim for >90% coverage
+
+## Git Workflow
+- Feature branches for new work
+- Descriptive commit messages
+- Pre-commit hooks run automatically
+- Ensure tests pass before pushing
+
+## Common Commands
+- bin/setup: Initial setup
+- bin/dev: Start all services
+- bin/rspec: Run tests
+- bin/rubocop: Lint code
+- bin/rails console: Interactive console
